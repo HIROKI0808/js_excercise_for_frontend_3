@@ -2,7 +2,7 @@
  * 課題1: id属性値が `main` のdiv要素ににul要素を追加する
  */
 const mainDivElement = document.getElementById('main');
-ulElement = document.createElement('ul');
+const ulElement = document.createElement('ul');
 mainDivElement.appendChild(ulElement);
 
 /**
@@ -15,50 +15,31 @@ mainDivElement.appendChild(ulElement);
  *     4. アイテム4
  *     5. アイテム5
  */
-// for (let i = 1; i <= 5; i++) {
-// 	const liElement = document.createElement('li');
-// 	liElement.textContent = 'アイテム' + i;
-// 	ulElement.appendChild(liElement);
-// }
 (() => {
 	for (let i = 1; i <= 5; i++){
 		const liElement = document.createElement('li');
 		liElement.textContent = 'アイテム' + i;
 		ulElement.appendChild(liElement);
 	}
-});
+})();
 
 /**
  * 課題3: 課題2で作成した5つのli要素の内、先頭から4番目(アイテム4)の要素を削除する
  *   - ヒント: DOMのchildrenプロパティが使える
  *     - https://developer.mozilla.org/ja/docs/Web/API/ParentNode/children
  */
-// const ulElementChildren = ulElement.children;
-// for (let i = 0; i < ulElementChildren.length; i++){
-// 	if (i === 3) {
-// 		ulElement.removeChild(ulElementChildren[i]);
-// 	}
-// }
 (() => {
 	const ulElementChildren = ulElement.children;
-	for (let i = 0; i < ulElementChildren.length; i++) {
-		if (i === 3) {
-			ulElement.removeChild(ulElementChildren[i]);
-		}
-	}
-});
+	ulElement.removeChild(ulElementChildren[3]);
+})();
 
 /**
  * 課題4: id属性値が `remove-all-items` のul要素内の全てのli要素を削除する
  *   - ul要素は削除しないこと
  */
-// const removeItemElements = document.getElementById('remove-all-items');
-// while (removeItemElements.firstChild) {
-// 	removeItemElements.removeChild(removeItemElements.firstChild);
-// }
 (() => {
 	const removeItemElements = document.getElementById('remove-all-items');
 	while (removeItemElements.firstChild) {
 		removeItemElements.removeChild(removeItemElements.firstChild);
 	}
-});
+})();
